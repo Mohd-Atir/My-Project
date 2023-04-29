@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quiz App</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+      }
+
+      body {
+        height: 100vh;
+        width: 100vw;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #353434;
+      }
+
+      .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: #ffff00;
+        box-shadow: 0 0 5px #000000;
+        padding: 90px 20px;
+        gap: 20px;
+        border-radius: 10px;
+      }
+
+      h1 {
+        font-weight: 600;
+        font-size: 30px;
+        position: relative;
+        top: -20px;
+        text-decoration: underline wavy 2px #8102f8;
+      }
+
+      #quizBtn {
+        position: relative;
+        bottom: -1rem;
+        background-color: #252424;
+        color: #ffffff;
+        font-size: 20px;
+        border: none;
+        width: 40%;
+        padding: 5px;
+        border-radius: 7px;
+        font-weight: 600;
+        box-shadow: 1px 1px 1px #f705f7;
+      }
+
+      #results{
+        position: relative;
+        bottom: -1.5rem;
+        font-size: 20px;
+        font-weight: 600;
+      }
+    </style>
+  </head>
+  <body>
+    <section class="container">
+      <h1>JavaScript Quiz App</h1>
+
+      <div id="quiz"></div>
+      <button id="quizBtn">Submit</button>
+      <div id="results"></div>
+    </section>
+    <script>
+      const quiz = document.getElementById("quiz");
+      const quizBtn = document.getElementById("quizBtn");
+      const results = document.getElementById("results");
+
+      const myQuestions = [
+        {
+          question: "What is the capital of France?",
+          answers: {
+            a: "Paris",
+            b: "London",
+            c: "New York",
+          },
+          correctAnswer: "a",
+        },
+        {
+          question: "What is the largest country in the world?",
+          answers: {
+            a: "Russia",
+            b: "China",
+            c: "United States",
+          },
+          correctAnswer: "a",
+        },
+        {
+          question: "What is the currency of Japan?",
+          answers: {
+            a: "Yuan",
+            b: "Euro",
+            c: "Yen",
+          },
+          correctAnswer: "c",
+        },
+      ];
+
+      function buildQuiz() {
+        const output = [];
+        myQuestions.forEach((element, index) => {
+          const answers = [];
+          for (key in element.answers) {
+            answers.push(
+              `<label>
+                            <input type="radio" name="question${index}" value="${key}"/>
+                            ${key} : ${element.answers[key]}
+                        </label>`
+            );
+          }
+          output.push(
+            `<div class="question">${element.question}</div>
+                    <div class="answers">${answers.join("")}</div>`
+          );
+        });
+        quiz.innerHTML = output.join("");
+      }
+
+      function showResults() {
+        const answerContainers = quiz.querySelectorAll(".answers");
+
+        let numCorrect = 0;
+
+        myQuestions.forEach((element, index) => {
+          const answerContainer = answerContainers[index];
+          const selector = `input[name=question${index}]:checked`;
+          const userAnswer = (answerContainer.querySelector(selector) || {})
+            .value;
+          if (userAnswer === element.correctAnswer) {
+            numCorrect++;
+            answerContainers[index].style.color = "green";
+          } else {
+            answerContainers[index].style.color = "red";
+          }
+        });
+
+        results.innerHTML = `Your Result is: ${numCorrect} out of ${myQuestions.length}`;
+      }
+      buildQuiz();
+
+      quizBtn.addEventListener("click", showResults);
+    </script>
+  </body>
+</html>
