@@ -1,0 +1,124 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body{
+    height: 100vh;
+    width: 100vw;
+    background-image: url("./R.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container{
+    padding: 60px 30px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 2px 3px 1px rgba(8, 20, 120, 0.25);
+}
+
+.container h2{
+    color: #222a43;
+    text-align: center;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+}
+
+h5{
+    font-size: 12px;
+    margin: 8px 0 0 20px;
+    color: #ff0000;
+    letter-spacing: .5px;
+}
+
+.search-wraper input{
+    width: 15rem;
+    border: none;
+    outline: none;
+    border-bottom: 1.5px solid #7f92ff;
+    font-size: 12px;
+    padding: 6px 10px;
+}
+
+.search-wraper{
+    display: flex;
+    gap: 2rem;
+}
+
+#search-btn{
+    padding: 6px 20px;
+    border: none;
+    background-color: #7f92ff;
+    border-radius: 20px;
+    color: #fff;
+    font-weight: 600;
+    box-shadow: 2px 3px 1px rgba(8, 20, 120, 0.25);
+}
+
+.container .flag-img{
+    height: 5rem;
+    margin: 1rem 0 0 7.5rem;
+}
+
+.data-wraper{
+    letter-spacing: 0.3px;
+    display: flex;
+    gap: 8px;
+    font-size: 13px;
+}
+
+@media screen and (max-width: 500px){
+    .container{
+        padding: 40px;
+    }
+    .search-wraper input{
+        font-size: 18px;
+        width: 10rem;
+    }
+    .search-wraper{
+        gap: 10px;
+    }
+    .container .flag-img{
+        margin-left: 2.5rem;
+    }
+    .container h2{
+        margin: 0 3rem 2rem 0;
+    }
+}
+
+@media screen and (max-width: 270px){
+    .container{
+        padding: 10px;
+    }
+    .search-wraper input{
+        font-size: 10px;
+        max-width: 7rem;
+    }
+    .search-wraper{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    button{
+        width: 7rem;
+    }
+    .container .flag-img{
+        height: 3rem;
+        margin-left: 5.3rem;
+    }
+    .container h2{
+        font-size: 1rem;
+        margin-left: 3rem;
+    }
+    .data-wraper{
+        max-width: 15rem;
+    }
+}
