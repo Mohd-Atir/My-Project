@@ -1,0 +1,147 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+    background-color: #000000;
+    gap: 2rem;
+}
+
+.container h1{
+    color: aliceblue;
+    text-align: center;
+}
+
+.game{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 19rem;
+    width: 25rem;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.game button{
+    height: 6rem;
+    width: 6rem;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.box{
+    font-size: 4rem;
+    font-weight: 700;
+    background-color: aliceblue;
+    color: #000000;
+}
+
+.box:hover{
+    transition: 0.5s;
+    filter: drop-shadow(0 0 5px #ff0088) drop-shadow(0 0 40px #ff0088)
+    contrast(1.8) brightness(1.8);    
+    border: 3px solid #ff0088;
+}
+
+.hide{
+    display: none;
+}
+
+p{
+    color:aliceblue;
+}
+
+.playBtn{
+    color: #ff0088;
+    padding: 5px 15px;
+    border: none;
+    border-radius: 5px;
+    border: 3px solid #ff0088;
+    font-size: 18px;
+    font-weight: 600;
+    background-color: #000;
+    cursor: pointer;
+    transition: 0.5s;
+    filter: drop-shadow(0 0 10px #ff0088) drop-shadow(0 0 40px #ff0088)
+    contrast(1.8) brightness(1.8);
+}
+
+.playBtn:hover{
+    background-color: #ff0088;
+    color: #000;
+    filter: drop-shadow(0 0 10px #ff0088) drop-shadow(0 0 40px #ff0088)
+    contrast(1.8) brightness(1.8);
+}
+
+.resetBtn{
+    color: #ff0088;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    border: 3px solid #ff0088;
+    font-size: 18px;
+    font-weight: 600;
+    background-color: #000;
+    cursor: pointer;
+    transition: 0.5s;
+    filter: drop-shadow(0 0 10px #ff0088) drop-shadow(0 0 40px #ff0088)
+    contrast(1.8) brightness(1.8);
+}
+
+.resetBtn:hover{
+    background-color: #ff0088;
+    color: #000;
+    filter: drop-shadow(0 0 10px #ff0088) drop-shadow(0 0 40px #ff0088)
+    contrast(1.8) brightness(1.8);
+}
+
+.player{
+    display: flex;
+    justify-content: center;
+    gap: 5rem;
+    letter-spacing: 2px;
+}
+
+.player_O{
+    background-color: #000;
+    color: #ff0088;
+    border: 3px solid #ff0088;
+    padding: 5px 10px;
+    filter: drop-shadow(0 0 10px #ff0088) drop-shadow(0 0 40px #ff0088)
+    contrast(1.8) brightness(1.8);
+    border-radius: 5px;
+
+}
+
+.player_X{
+    background-color: #000;
+    color: #ff0088;
+    border: 3px solid #ff0088;
+    padding: 5px 10px;
+    filter: drop-shadow(0 0 10px #ff0088) drop-shadow(0 0 40px #ff0088)
+    contrast(1.8) brightness(1.8);
+    border-radius: 5px;
+}
+
+.turnIndiacator{
+    border: 1px solid aliceblue;
+    }
+
+.position{
+    display: flex;
+    gap: 10px;
+}
+
+.indicator_X{
+    display: none;
+}
